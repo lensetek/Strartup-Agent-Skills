@@ -81,33 +81,37 @@ Seluruh skill ini memanfaatkan modul pencarian literatur bawaan sistem / All the
 
 ---
 
-## Instalasi via NPX / Installation via NPX
+## Instalasi via Git & Prompt / Installation via Git & Prompt
 
 ### 🇮🇩 Bahasa Indonesia
-Anda dapat memasang seluruh 15 skill ini secara otomatis ke dalam workspace Anda atau secara global menggunakan `npx`.
+Anda dapat memasang seluruh 15 skill ini dengan melakukan kloning repositori dan menggunakan *prompt* kepada agen untuk memuatnya.
 
-*   **Pemasangan Lokal (Workspace saat ini)**:
+1.  **Kloning Repositori**:
+    Jalankan perintah berikut di terminal Anda:
     ```bash
-    npx research-agent-skills-collection
+    git clone https://github.com/lensetek/Research-Agent-Skills-Collection.git
     ```
-*   **Pemasangan Global (Aktif untuk semua workspace)**:
-    ```bash
-    npx research-agent-skills-collection --global
-    ```
+    *(Atau gunakan `git pull` jika Anda sudah pernah melakukan kloning sebelumnya).*
+
+2.  **Gunakan Prompt**:
+    Berikan instruksi (*prompt*) berikut kepada agen Anda:
+    > *"Tolong baca folder skill dari repositori yang baru saja saya clone, lalu muat dan daftarkan seluruh skill tersebut ke dalam sistem Anda."*
 
 ---
 
 ### 🇬🇧 English
-You can automatically install all 15 skills into your current workspace or globally using `npx`.
+You can install all 15 skills by cloning the repository and using a prompt to instruct the agent to load them.
 
-*   **Local Installation (Current workspace)**:
+1.  **Clone the Repository**:
+    Run the following command in your terminal:
     ```bash
-    npx research-agent-skills-collection
+    git clone https://github.com/lensetek/Research-Agent-Skills-Collection.git
     ```
-*   **Global Installation (Available across all workspaces)**:
-    ```bash
-    npx research-agent-skills-collection --global
-    ```
+    *(Or use `git pull` if you have previously cloned it).*
+
+2.  **Use Prompt**:
+    Give the following prompt to your agent:
+    > *"Please read the skills folder from the newly cloned repository, then load and register all the skills into your system."*
 
 ---
 
