@@ -1,7 +1,7 @@
 {
   "name": "startup-agent-skills-hub",
   "version": "1.0.0",
-  "description": "Kumpulan skill metodologis ilmiah terstruktur untuk Startup Agent di bawah sistem plugin science.",
+  "description": "Kumpulan skill modular terstruktur untuk Startup Agent.",
   "files": [
     "skills",
     "bin",
@@ -10,11 +10,11 @@
   "keywords": [
     "antigravity",
     "gemini",
-    "research",
+    "startup",
     "agent",
     "skills",
     "cli"
   ],
-  "author": "Research Agent Team",
+  "author": "Startup Agent Team",
   "license": "MIT"
 }
