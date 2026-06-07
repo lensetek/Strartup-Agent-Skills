@@ -7,7 +7,7 @@ description: >-
 # Literature Review Generator
 
 ## Overview
-Skill ini dirancang untuk menghasilkan tinjauan pustaka (literature review) yang sistematis dan mendalam. Agen akan melacak tren penelitian dari waktu ke waktu, memetakan kontribusi utama para peneliti terkemuka, dan mengidentifikasi celah (gaps) dalam literatur saat ini yang dapat dijadikan peluang riset baru.
+Skill ini dirancang untuk menghasilkan tinjauan pustaka (literature review) yang sistematis, mendalam, dan memiliki bobot argumentasi ilmiah yang kuat. Agen akan membantu memetakan perkembangan riset dari waktu ke waktu, mengidentifikasi kontradiksi/konsensus, dan secara logis membangun argumentasi yang menjustifikasi mengapa penelitian baru yang diusulkan bernilai penting untuk dilakukan.
 
 ## Dependencies
 - `literature-search-openalex`
@@ -22,33 +22,39 @@ Contoh penggunaan:
 
 ## Workflow
 
-### 1. Perencanaan Protokol Review
-- Definisikan batasan tinjauan pustaka: rentang tahun publikasi, tipe dokumen (jurnal, konferensi), dan area sub-topik spesifik.
-- Buat kriteria inklusi/eksklusi paper secara logis (misalnya hanya menyertakan paper dengan sitasi tinggi atau paper eksperimental).
+### 1. Perencanaan Protokol Review & Penentuan Mode
+Tentukan batasan review (rentang tahun, tipe dokumen) dan pilih salah satu mode kerja berikut:
+- **Narrative Literature Review Mode**: Untuk proposal konseptual atau penyusunan bab teori umum.
+- **Systematic Literature Review (SLR) Mode**: Menggunakan kriteria inklusi-eksklusi formal, penentuan kata kunci/query database terstruktur, dokumentasi proses pencarian/screening (misal: diagram PRISMA sederhana), dan tabel ekstraksi data komprehensif.
+- **Thematic Review Mode**: Mengelompokkan paper berdasarkan tema, konsep, atau sub-topik masalah.
+- **Chronological Review Mode**: Menelusuri sejarah perkembangan ide/teknologi dari pionir awal hingga tren termutakhir untuk menunjukkan evolusi paradigma.
+- **Critical Review Mode**: Berfokus mengevaluasi kelemahan asumsi teoretis, kelemahan evaluasi, bias data, dan keterbatasan metodologis dari studi sebelumnya.
 
 ### 2. Penelusuran & Pemetaan Historis (Timeline)
-- Cari literatur pionir (seminal papers) dan paper ulasan (review papers) terbaru menggunakan mesin pencari literatur.
-- Susun garis waktu kronologis perkembangan riset tersebut, menyoroti peralihan paradigma (paradigm shifts) atau terobosan metodologi penting dari tahun ke tahun.
+- Cari literatur pionir (seminal papers) dan paper ulasan (survey papers) terbaru menggunakan mesin pencari literatur.
+- Susun garis waktu kronologis perkembangan riset tersebut.
 
-### 3. Analisis Celah Penelitian (Research Gap Analysis)
-- Analisis area-area yang:
-  - Memiliki hasil eksperimen yang saling bertentangan.
-  - Memiliki keterbatasan asumsi teoritis yang belum diuji secara empiris.
-  - Kurang dieksplorasi karena keterbatasan teknologi masa lalu.
-  - Memiliki aplikasi praktis yang belum banyak diteliti.
-- Dokumentasikan celah ini secara jelas dalam bab atau bagian khusus bertajuk **"Research Gaps & Future Work"**.
+### 3. Analisis Celah Penelitian & Argument Map
+- Buat **Argument Map** untuk membangun alur argumentasi yang menjustifikasi posisi riset baru. Contoh alur:
+  * *Riset terdahulu banyak fokus pada akurasi metodologi X.*
+  * *Namun, evaluasi akurasi tersebut sering tidak menguji robustness dalam kondisi riil.*
+  * *Beberapa paper menggunakan dataset yang tidak seimbang tanpa penanganan bias.*
+  * *Oleh karena itu, riset baru ini hadir untuk menutup gap tersebut dengan menawarkan evaluasi robustness berbasis ablation.*
 
-### 4. Penyusunan Naskah Literature Review
-Struktur penulisan tinjauan pustaka:
-- **Pendahuluan**: Urgensi topik dan ruang lingkup review.
-- **Perkembangan Historis / Landasan Teori**: Kronologi perkembangan konsep.
-- **Kategorisasi Tema / Taksonomi Riset**: Pengelompokan literatur berdasarkan metodologi atau pendekatan yang digunakan (e.g., pendekatan berbasis aturan vs deep learning).
-- **Analisis Kritis & Celah Penelitian**: Pembahasan kelemahan metodologi terdahulu dan peluang riset baru.
-- **Kesimpulan**: Ringkasan arah penelitian selanjutnya.
+### 4. Format Laporan Literature Review
+Struktur penulisan tinjauan pustaka harus memuat:
+- **Pendahuluan**: Urgensi topik, pertanyaan riset yang dipecahkan, dan batasan review.
+- **Matriks Ringkasan Literatur**: Tabel terstruktur wajib dengan kolom berikut:
+  | Tahun | Penulis | Fokus Riset | Metode | Dataset / Konteks | Temuan Utama | Keterbatasan Utama | Relevansi dengan Riset Kita |
+  |---|---|---|---|---|---|---|---|
+- **Argument Map (Peta Posisi Penelitian)**: Penjelasan berbasis poin-poin alur argumentasi yang mengarah pada kontribusi riset Anda.
+- **Analisis Kritis & Kategorisasi Tema**: Pengelompokan literatur secara kritis berdasarkan pendekatan yang digunakan (e.g., pendekatan berbasis aturan vs deep learning).
+- **Kesimpulan**: Ringkasan implikasi teoritis dan metodologis untuk riset mendatang.
 
 ### 5. Sitasi & Referensi
 - Pastikan setiap klaim didukung oleh referensi yang tepat dengan mencantumkan metadata DOI/URL yang valid pada Daftar Pustaka.
 
-## Common Mistakes
-- **Hanya Merangkum Tanpa Mengkritik**: Hanya menulis ulang apa yang dilakukan paper tanpa membandingkan kelebihan dan kekurangan metodologinya secara kritis.
-- **Kronologi Acak**: Menulis sejarah perkembangan teknologi tanpa urutan waktu yang runtut, membuat pembaca sulit melihat evolusi ide riset.
+## Common Mistakes & Aturan Kritis
+- **Hanya Merangkum Tanpa Mengkritik**: Menghindari model penulisan deskriptif daftar ringkasan (e.g., "Peneliti A menemukan X. Peneliti B menemukan Y."). Agen harus membandingkan, mengelompokkan, dan mengkritisi.
+- **Kronologi Acak**: Menulis sejarah konsep tanpa urutan waktu yang jelas.
+- **Referensi Tidak Valid**: Menulis kutipan tanpa menyertakan DOI atau tautan referensi asli yang dapat dilacak. Dilarang keras mengarang referensi.

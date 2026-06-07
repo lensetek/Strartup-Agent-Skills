@@ -7,7 +7,7 @@ description: >-
 # Extract Methodology
 
 ## Overview
-Skill ini ditujukan untuk membedah karya ilmiah secara mendalam guna menarik informasi metodologi eksperimen, alur algoritma/sistem, dataset yang digunakan, hyperparameter, dan hasil pengujian performa secara terstruktur. Ini sangat berguna ketika peneliti ingin mereproduksi (reproduce) penelitian terdahulu atau membandingkan baseline.
+Skill ini ditujukan untuk membedah karya ilmiah secara mendalam guna menarik informasi metodologi eksperimen, alur algoritma/sistem, dataset yang digunakan, hyperparameter, dan hasil pengujian performa secara terstruktur dengan tingkat akurasi 100%. Ini sangat berguna ketika peneliti ingin mereproduksi (reproduce) penelitian terdahulu atau membandingkan baseline.
 
 ## Dependencies
 - `literature-search-openalex`
@@ -25,24 +25,32 @@ Contoh penggunaan:
 
 ### 2. Pengambilan & Pembacaan Paper Lengkap
 - Cari ID paper atau URL paper menggunakan tools pencarian literatur.
-- Baca bagian Metode (Methodology), Pengaturan Eksperimen (Experimental Setup), dan Hasil (Results) pada paper target secara detail.
+- Baca bagian Metode (Methodology), Pengaturan Eksperimen (Experimental Setup), dan Hasil (Results) pada paper target secara detail. Jangan berasumsi hanya dari abstrak.
 
-### 3. Ekstraksi Informasi Terstruktur
-- Ekstrak informasi dan susun ke dalam format terstruktur (e.g., tabel markdown atau format JSON):
-  - **Dataset**: Nama dataset, ukuran, pembagian train/val/test, dan teknik augmentasi data (jika ada).
-  - **Arsitektur Model / Desain Sistem**: Lapisan jaringan, fungsi aktivasi, jumlah parameter, alur diagram sistem.
-  - **Parameter Eksperimen**: Learning rate, batch size, epochs, optimizer (e.g., AdamW), loss function.
-  - **Hasil & Metrik Evaluasi**: Skor performa model pada benchmark tertentu dibandingkan dengan model pembanding (baseline).
+### 3. Ekstraksi Informasi Terstruktur (10 Komponen Wajib)
+Ekstrak informasi secara presisi ke dalam tabel Markdown atau skema JSON yang mencakup komponen berikut:
+1. **Tujuan Paper**: Masalah spesifik yang ingin diselesaikan oleh penulis.
+2. **Dataset**: Nama dataset, ukuran, sumber, label, periode data, pembagian train/val/test, dan teknik augmentasi data (jika ada).
+3. **Preprocessing**: Langkah-langkah pembersihan, normalisasi, tokenisasi, atau ekstraksi fitur.
+4. **Model/Metode**: Algoritma utama yang digunakan serta baseline yang dibandingkan.
+5. **Arsitektur**: Detail arsitektur model, struktur jaringan, fungsi aktivasi, jumlah parameter, atau diagram alur sistem.
+6. **Parameter**: Detail hyperparameter, learning rate, optimizer (e.g., AdamW), batch size, epoch, loss function, dan environment perangkat keras/lunak.
+7. **Evaluasi**: Metrik pengujian (e.g., Accuracy, F1-Score, RMSE), skenario uji, validasi silang (cross-validation).
+8. **Hasil Utama**: Angka performa model yang secara eksplisit dilaporkan dalam tabel/teks hasil eksperimen paper.
+9. **Keterbatasan**: Hambatan/batasan yang diakui oleh penulis atau keterbatasan metodologi yang ditemukan agen secara kritis.
+10. **Reproducibility**: Status ketersediaan repositori kode sumber (link GitHub/GitLab), petunjuk instalasi, dan aksesibilitas dataset (publik vs privat).
 
 ### 4. Analisis Reproduksibilitas (Reproducibility Check)
-- Evaluasi apakah paper tersebut menyediakan informasi yang cukup untuk diimplementasikan ulang (reproduced):
-  - Apakah kode sumber (source code) disediakan? (Cari link GitHub/GitLab).
-  - Apakah dataset bersifat publik atau privat?
-  - Apakah ada detail eksperimen yang ambigu atau tidak dijelaskan secara eksplisit?
+- Evaluasi apakah paper tersebut menyediakan informasi yang cukup untuk diimplementasikan ulang (reproduced).
 
 ### 5. Pelaporan Hasil Ekstraksi
 - Buat rangkuman teknis yang bersih dan to-the-point menggunakan poin-poin terstruktur dan tabel data. Hindari narasi panjang lebar yang tidak perlu.
 
-## Common Mistakes
-- **Hanya Membaca Abstrak**: Abstrak jarang memuat detail teknis seperti hyperparameter atau detail dataset. Agen wajib menelusuri bagian isi utama paper.
-- **Klaim Tanpa Bukti**: Menuliskan angka hasil performa atau parameter tanpa merujuk ke tabel atau bagian spesifik di dalam paper asli.
+## Common Mistakes & Aturan Kritis (Anti-Halusinasi)
+- **Hanya Membaca Abstrak**: Abstrak jarang memuat detail teknis. Agen wajib menelusuri isi utama paper.
+- **Klaim Tanpa Bukti & Halusinasi Parameter**: 
+  - Jika suatu hyperparameter tidak disebutkan di paper, wajib menuliskan **"tidak dilaporkan"** (jangan mengarang nilai atau menggunakan nilai default umum).
+  - Jika dataset tidak jelas, wajib menuliskan **"tidak dijelaskan secara eksplisit"**.
+  - Jika hasil performa disajikan dalam bentuk grafik tanpa angka tabel yang jelas, wajib menuliskan bahwa nilai tersebut ditaksir secara visual dari grafik dan sebutkan estimasi rentangnya.
+- **Perbandingan Apel-ke-Jeruk (False Equivalence)**: Dilarang menyamakan atau membandingkan langsung performa antar-paper jika dataset, konfigurasi eksperimen, atau skenario pengujiannya berbeda.
+- **Kutipan Sumber**: Setiap angka atau parameter yang diekstrak harus merujuk pada bagian spesifik dari paper asli (misalnya, *Tabel 2*, *Halaman 5, Kolom 2*).

@@ -7,7 +7,7 @@ description: >-
 # Synthesize Research
 
 ## Overview
-Skill ini memandu Research Agent dalam menganalisis sekumpulan artikel ilmiah terkait topik tertentu, membandingkan hasilnya secara kritis, dan merangkum kesimpulan utama (konsensus, kontradiksi, dan arah masa depan) untuk menjawab pertanyaan riset pengguna secara faktual dan bebas dari halusinasi.
+Skill ini memandu Research Agent dalam menganalisis sekumpulan artikel ilmiah terkait topik tertentu, membandingkan hasilnya secara kritis, menilai kekuatan metodologi masing-masing bukti, dan merangkum kesimpulan utama (konsensus, kontradiksi, implikasi, dan arah masa depan) untuk menghasilkan sintesis ilmiah objektif dan bebas dari halusinasi.
 
 ## Dependencies
 Skill ini membutuhkan akses ke tools pencarian literatur:
@@ -27,29 +27,28 @@ Contoh penggunaan:
 - Identifikasi kata kunci pencarian utama dan sinonimnya.
 
 ### 2. Pengumpulan Literatur Terverifikasi
-- Lakukan pencarian literatur menggunakan tools dependensi.
-- Kumpulkan minimal 5-10 artikel relevan yang memiliki metadata valid (judul, penulis, tahun, DOI/URL).
-- **Penting:** Dilarang mengarang atau menggunakan artikel fiktif. Jika hasil pencarian tidak mencukupi, sampaikan ke pengguna dan minta arahan kata kunci baru.
+- Kumpulkan minimal 5-10 artikel ilmiah dengan metadata valid (judul, penulis, tahun, DOI/URL).
+- **Penting:** Dilarang mengarang artikel fiktif. Jika hasil tidak mencukupi, sampaikan apa adanya ke pengguna.
 
 ### 3. Ekstraksi Temuan & Pembuatan Sintesis Matrix
-- Baca abstrak atau isi makalah yang diperoleh.
-- Buatlah tabel sintesis internal (Sintesis Matrix) yang memuat kolom:
-  - Penulis & Tahun
-  - Desain Eksperimen / Metodologi
-  - Temuan Utama / Hasil
-  - Kekuatan & Batasan (jika ada)
+- Lakukan sintesis kritis dengan membandingkan temuan antar-paper, menilai kekuatan bukti masing-masing studi (dilihat dari ukuran dataset, ketegasan evaluasi, atau validitas metode), dan mengidentifikasi pola hasil eksperimen.
 
 ### 4. Penyusunan Laporan Sintesis (Synthesis Report)
-- Tulis laporan dengan struktur ilmiah formal:
-  - **Pendahuluan**: Latar belakang singkat dan pertanyaan riset yang dijawab.
-  - **Analisis Tematis / Temuan Utama**: Kelompokkan temuan berdasarkan tema besar, bukan ringkasan per paper.
-  - **Konsensus & Kontradiksi**: Jelaskan poin-poin di mana para peneliti sepakat, serta perdebatan atau hasil yang bertentangan antar studi.
-  - **Kesimpulan & Celah Masa Depan**: Ringkasan jawaban atas pertanyaan riset dan apa yang belum terjawab.
-- Gunakan sitasi dalam teks (in-text citation) seperti `(Penulis, Tahun)` atau `[1]` yang merujuk langsung ke Daftar Pustaka.
+Tulis laporan dengan struktur ilmiah formal sebagai berikut:
+- **Pendahuluan**: Latar belakang singkat dan pertanyaan riset yang dijawab.
+- **Tabel Sintesis Temuan Utama (Synthesis Table)**: Wajib membuat tabel dengan kolom:
+  | Pertanyaan Riset | Sintesis Temuan | Bukti Utama (Referensi Paper) | Kontradiksi / Perdebatan | Implikasi Praktis/Teoris | Keterbatasan Sintesis |
+  |---|---|---|---|---|---|
+- **Analisis Tematik / Konsensus & Kontradiksi**: Kelompokkan temuan berdasarkan tema besar. Jelaskan secara netral aspek mana yang disepakati para peneliti dan aspek mana yang menunjukkan hasil saling bertentangan beserta faktor pemicunya (misal: perbedaan ukuran sampel atau variansi metode pengujian).
+- **Kesimpulan**: Ringkasan jawaban atas pertanyaan riset utama.
 
 ### 5. Daftar Pustaka Valid
-- Cantumkan daftar referensi lengkap yang digunakan dengan tautan DOI atau URL asli di akhir laporan.
+- Cantumkan referensi lengkap dengan tautan DOI atau URL asli di akhir laporan.
 
-## Common Mistakes
-- **Ringkasan Paralel**: Menulis laporan sebagai daftar ringkasan paper satu-satu (e.g., "Paper A menemukan X. Paper B menemukan Y.") tanpa mensintesis relasi antar paper tersebut.
-- **Mengabaikan Kontradiksi**: Mengabaikan data atau paper yang hasilnya tidak mendukung hipotesis umum. Perbedaan hasil eksperimen wajib dibahas secara netral.
+## Common Mistakes & Aturan Kritis (Anti-Halusinasi & Sintesis)
+- **Ringkasan Paralel**: Menghindari model penulisan deskriptif berurutan (e.g., "Paper A menemukan X. Paper B menemukan Y."). Agen harus merelasikan dan membandingkan temuan secara sintesis.
+- **Halusinasi Metrik & Perbandingan Keliru**: 
+  - Dilarang menggabungkan atau membandingkan langsung metrik yang tidak sebanding dari paper yang berbeda.
+  - Dilarang menarik kesimpulan model/algoritma terbaik secara mutlak jika dataset dan skenario pengujiannya berbeda.
+- **Mengabaikan Hasil Kontradiktif**: Perbedaan hasil eksperimen antar-studi wajib diulas secara objektif tanpa bias.
+- **Pemisahan Opini**: Wajib memisahkan secara jelas antara temuan faktual yang dilaporkan di paper dan interpretasi/analisis subjektif agen. Gunakan frasa penjelas seperti *"Berdasarkan bukti di atas, analisis kami menunjukkan bahwa..."*.

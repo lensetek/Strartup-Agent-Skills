@@ -1,0 +1,24 @@
+{
+  "name": "research-agent-skills-collection",
+  "version": "1.0.0",
+  "description": "Kumpulan skill metodologis ilmiah terstruktur untuk Research Agent di bawah sistem plugin science.",
+  "main": "bin/install.js",
+  "bin": {
+    "install-research-skills": "./bin/install.js"
+  },
+  "files": [
+    "skills",
+    "bin",
+    "README.md"
+  ],
+  "keywords": [
+    "antigravity",
+    "gemini",
+    "research",
+    "agent",
+    "skills",
+    "cli"
+  ],
+  "author": "Research Agent Team",
+  "license": "MIT"
+}

@@ -8,27 +8,32 @@
 
 Repositori ini adalah kumpulan **Skills** khusus untuk **Research Agent** (Asisten Agen Peneliti). Kumpulan skill ini dipasang langsung ke dalam sistem plugin `science` untuk membekali agen AI dengan prosedur metodologis ilmiah yang kokoh dalam mencari, menganalisis, mengekstrak, dan mengevaluasi literatur akademis serta paten teknologi secara valid tanpa halusinasi.
 
-### Kumpulan Skill yang Tersedia
+### Kumpulan Skill yang Tersedia (15 Skills)
 
-#### 1. 🔍 [Discover Phenomenon & Gap](file:///C:/Users/ACER/.gemini/config/plugins/science/skills/discover_phenomenon_and_gap/SKILL.md)
-* **Kegunaan**: Tahap awal eksplorasi untuk mendeteksi tren fenomena baru serta merumuskan celah riset (*research gaps*).
-* **Fitur**: Klasifikasi celah riset (Metodologis, Empiris, Aplikasi) dan perumusan Pertanyaan Riset (RQ).
+#### 🚀 Orkestrator Utama (Starter Skill)
+*   **[research-orchestrator](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/research_orchestrator/SKILL.md)**: Pintu masuk utama untuk menjalankan alur kerja riset 4 fase otomatis penuh secara sekuensial.
 
-#### 2. 📝 [Literature Review Generator](file:///C:/Users/ACER/.gemini/config/plugins/science/skills/literature_review_generator/SKILL.md)
-* **Kegunaan**: Pembuatan draf tinjauan pustaka (*literature review*) yang sistematis dan terstruktur secara kronologis.
-* **Fitur**: Pembuatan garis waktu evolusi riset dan penentuan batas kriteria inklusi/eksklusi paper.
+#### 📁 Fase 1 — Discovery & Framing (Masalah)
+1.  **[discover-phenomenon-and-gap](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/discover_phenomenon_and_gap/SKILL.md)**: Eksplorasi tren fenomena baru, anomali, dan pemetaan celah ilmiah (*research gap*) formal.
+2.  **[research-question-builder](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/research_question_builder/SKILL.md)**: Mengubah celah riset menjadi Pertanyaan Riset (RQ), tujuan penelitian, kontribusi, dan batasan ruang lingkup (*scope limitation*).
+3.  **[hypothesis-or-proposition-builder](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/hypothesis_or_proposition_builder/SKILL.md)**: Menyusun pernyataan hipotesis/proposisi logis disertai diagram Mermaid kerangka konseptual.
 
-#### 3. 🔬 [Synthesize Research](file:///C:/Users/ACER/.gemini/config/plugins/science/skills/synthesize_research/SKILL.md)
-* **Kegunaan**: Mensintesis temuan dari berbagai paper secara tematis untuk menjawab pertanyaan riset tertentu secara kritis.
-* **Fitur**: Sintesis matriks perbandingan metodologi & hasil eksperimen, serta analisis konsensus vs kontradiksi.
+#### 📁 Fase 2 — Research Methodology (Perencanaan)
+4.  **[research-design-planner](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/research_design_planner/SKILL.md)**: Merancang desain metode (kuantitatif, kualitatif, mixed-method, komputasional AI/ML) beserta skenario validasi, pengujian robustness, dan studi ablasi.
 
-#### 4. 📊 [Extract Methodology](file:///C:/Users/ACER/.gemini/config/plugins/science/skills/extract_methodology/SKILL.md)
-* **Kegunaan**: Membedah paper untuk mengekstrak informasi teknis secara terstruktur dan presisi.
-* **Fitur**: Ekstraksi detail dataset, parameter eksperimen (hyperparameters), arsitektur model, skor evaluasi, dan cek reproduksibilitas.
+#### 📁 Fase 3 — Literature Intelligence (Kajian & Validasi)
+5.  **[literature-review-generator](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/literature_review_generator/SKILL.md)**: Penyusunan draf tinjauan pustaka bertema dengan mode khusus (Narrative, SLR, Thematic, Chronological, Critical) dan Peta Argumen.
+6.  **[extract-methodology](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/extract_methodology/SKILL.md)**: Membedah paper untuk ekstraksi 10 komponen teknis wajib (tujuan, parameter, dataset, dll.).
+7.  **[source-quality-appraiser](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/source_quality_appraiser/SKILL.md)**: Menilai kuartil jurnal (Q1-Q4), peringkat konferensi (CORE), bias metodologis, dan status kelayakan rujukan.
+8.  **[citation-and-reference-validator](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/citation_and_reference_validator/SKILL.md)**: Audit keaslian rujukan (DOI) dan memvalidasi dukungan kontekstual kalimat rujukan (mencegah salah sitasi).
+9.  **[paper-matrix-builder](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/paper_matrix_builder/SKILL.md)**: Mengotomatiskan pembuatan tabel ringkasan komparasi State-of-the-Art (SotA) dan peta bukti (*evidence map*).
 
-#### 5. 💡 [Patent & Literature Matcher](file:///C:/Users/ACER/.gemini/config/plugins/science/skills/patent_and_literature_matcher/SKILL.md)
-* **Kegunaan**: Membandingkan klaim teknologi/paten dengan publikasi ilmiah guna mendeteksi *prior art*.
-* **Fitur**: *Claim mapping table* dan penilaian tingkat risiko kebaruan (*novelty risk assessment*).
+#### 📁 Fase 4 — Synthesis, Novelty & Publication (Sintesis & Publikasi)
+10. **[synthesize-research](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/synthesize_research/SKILL.md)**: Analisis komparasi temuan kritis, memetakan konsensus & kontradiksi, serta memisahkan opini dari bukti rujukan.
+11. **[patent-and-literature-matcher](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/patent_and_literature_matcher/SKILL.md)**: Mendeteksi potensi *prior art* dengan mencocokkan komponen klaim invensi terhadap literatur ilmiah.
+12. **[journal-recommendation-finder](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/journal_recommendation_finder/SKILL.md)**: Mencari jurnal target terbaik berdasarkan kuartil, relevansi scope, biaya APC, dan turnaround time (bebas jurnal predator).
+13. **[academic-peer-reviewer](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/academic_peer_reviewer/SKILL.md)**: Simulasi peer review independen (Accept/Revision/Reject) dengan daftar masalah mayor/minor.
+14. **[reviewer-response-and-revision](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/reviewer_response_and_revision/SKILL.md)**: Memformulasikan draf jawaban diplomatis *Response to Reviewers* dan merencanakan revisi naskah secara konsisten.
 
 ---
 
@@ -36,41 +41,92 @@ Repositori ini adalah kumpulan **Skills** khusus untuk **Research Agent** (Asist
 
 This repository is a collection of custom **Skills** for **Research Agents**. These skills are directly installed into the `science` plugin system to equip AI agents with solid scientific methodology procedures to search, analyze, extract, and evaluate academic literature and technology patents factually without hallucination.
 
-### Available Skills
+### Available Skills (15 Skills)
 
-#### 1. 🔍 [Discover Phenomenon & Gap](file:///C:/Users/ACER/.gemini/config/plugins/science/skills/discover_phenomenon_and_gap/SKILL.md)
-* **Use Case**: Initial exploration phase to detect new trending phenomena and formulate concrete research gaps.
-* **Features**: Classification of research gaps (Methodological, Empirical, Application) and formulation of Research Questions (RQ).
+#### 🚀 Main Orchestrator (Starter Skill)
+*   **[research-orchestrator](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/research_orchestrator/SKILL.md)**: Main entry point to run the full 4-phase research workflow sequentially and automatically.
 
-#### 2. 📝 [Literature Review Generator](file:///C:/Users/ACER/.gemini/config/plugins/science/skills/literature_review_generator/SKILL.md)
-* **Use Case**: Generating systematic and chronologically structured literature review drafts.
-* **Features**: Research evolution timeline creation and definition of paper inclusion/exclusion criteria.
+#### 📁 Phase 1 — Discovery & Framing (Problem Framing)
+1.  **[discover-phenomenon-and-gap](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/discover_phenomenon_and_gap/SKILL.md)**: Explores new phenomenon trends, anomalies, and maps formal academic research gaps.
+2.  **[research-question-builder](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/research_question_builder/SKILL.md)**: Translates gaps into Research Questions (RQs), research objectives, theoretical/methodological/practical contributions, and scope limitations.
+3.  **[hypothesis-or-proposition-builder](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/hypothesis_or_proposition_builder/SKILL.md)**: Formulates directional hypotheses or qualitative propositions with conceptual framework diagrams (Mermaid format).
 
-#### 3. 🔬 [Synthesize Research](file:///C:/Users/ACER/.gemini/config/plugins/science/skills/synthesize_research/SKILL.md)
-* **Use Case**: Synthesizing findings from multiple papers thematically to answer specific research questions critically.
-* **Features**: Synthesis matrix comparing methodologies & experimental results, and consensus vs. contradiction analysis.
+#### 📁 Phase 2 — Research Methodology (Planning)
+4.  **[research-design-planner](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/research_design_planner/SKILL.md)**: Designs methodologies (quantitative, qualitative, mixed-methods, computational AI/ML experiments) with validations, robustness checks, and ablation plans.
 
-#### 4. 📊 [Extract Methodology](file:///C:/Users/ACER/.gemini/config/plugins/science/skills/extract_methodology/SKILL.md)
-* **Use Case**: Dissecting scientific papers to extract technical information in a structured and precise manner.
-* **Features**: Extraction of dataset details, experimental parameters (hyperparameters), model architectures, evaluation scores, and reproducibility checks.
+#### 📁 Phase 3 — Literature Intelligence (Review & Audit)
+5.  **[literature-review-generator](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/literature_review_generator/SKILL.md)**: Generates structured, themed literature reviews using specific modes (Narrative, SLR, Thematic, Chronological, Critical) with Argument Maps.
+6.  **[extract-methodology](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/extract_methodology/SKILL.md)**: Dissects papers to extract 10 mandatory technical components (objectives, parameters, datasets, metrics, etc.).
+7.  **[source-quality-appraiser](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/source_quality_appraiser/SKILL.md)**: Appraises journal quartiles (Q1-Q4), conference rankings (CORE), methodological flaws, bias risks, and overall reference eligibility.
+8.  **[citation-and-reference-validator](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/citation_and_reference_validator/SKILL.md)**: Audits citation metadata (DOIs) and validates contextual citation support (preventing misattribution/fake citations).
+9.  **[paper-matrix-builder](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/paper_matrix_builder/SKILL.md)**: Automates the creation of standardized State-of-the-Art (SotA) matrices and evidence maps.
 
-#### 5. 💡 [Patent & Literature Matcher](file:///C:/Users/ACER/.gemini/config/plugins/science/skills/patent_and_literature_matcher/SKILL.md)
-* **Use Case**: Comparing technology/patent claims with scientific publications to detect *prior art*.
-* **Features**: *Claim mapping table* and novelty risk assessment.
+#### 📁 Phase 4 — Synthesis, Novelty & Publication (Synthesis & Publishing)
+10. **[synthesize-research](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/synthesize_research/SKILL.md)**: Compares critical findings, maps consensuses and debates, and separates objective evidence from agent interpretation.
+11. **[patent-and-literature-matcher](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/patent_and_literature_matcher/SKILL.md)**: Discovers potential prior art by mapping patent/invention claims against scientific publications.
+12. **[journal-recommendation-finder](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/journal_recommendation_finder/SKILL.md)**: Discovers ideal target journals by quartile, scope alignment, APC costs, and turnaround times, avoiding predatory venues.
+13. **[academic-peer-reviewer](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/academic_peer_reviewer/SKILL.md)**: Simulates peer reviews (Accept/Revision/Reject) with categorized major and minor concerns.
+14. **[reviewer-response-and-revision](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/reviewer_response_and_revision/SKILL.md)**: Drafts formal Responses to Reviewers and plans manuscript modifications consistently.
 
 ---
 
 ## Dependensi Sistem Pencarian / Search System Dependencies
+
 Seluruh skill ini memanfaatkan modul pencarian literatur bawaan sistem / All these skills utilize the system's built-in literature search modules:
-* **arXiv API** (`literature-search-arxiv`)
-* **OpenAlex API** (`literature-search-openalex`)
-* **bioRxiv/medRxiv API** (`literature-search-biorxiv`)
-* **PubMed/Entrez API** (`pubmed-database`)
-* **Europe PMC API** (`literature-search-europepmc`)
+*   **arXiv API** (`literature-search-arxiv`)
+*   **OpenAlex API** (`literature-search-openalex`)
+*   **bioRxiv/medRxiv API** (`literature-search-biorxiv`)
+*   **PubMed/Entrez API** (`pubmed-database`)
+*   **Europe PMC API** (`literature-search-europepmc`)
+
+---
+
+## Instalasi via NPX / Installation via NPX
+
+### 🇮🇩 Bahasa Indonesia
+Anda dapat memasang seluruh 15 skill ini secara otomatis ke dalam workspace Anda atau secara global menggunakan `npx`.
+
+*   **Pemasangan Lokal (Workspace saat ini)**:
+    ```bash
+    npx research-agent-skills-collection
+    ```
+*   **Pemasangan Global (Aktif untuk semua workspace)**:
+    ```bash
+    npx research-agent-skills-collection --global
+    ```
+
+---
+
+### 🇬🇧 English
+You can automatically install all 15 skills into your current workspace or globally using `npx`.
+
+*   **Local Installation (Current workspace)**:
+    ```bash
+    npx research-agent-skills-collection
+    ```
+*   **Global Installation (Available across all workspaces)**:
+    ```bash
+    npx research-agent-skills-collection --global
+    ```
+
+---
 
 ## Cara Menggunakan Skill / How to Use the Skills
-Untuk mengaktifkan skill tertentu, Anda cukup memberikan instruksi berbahasa alami ke agen AI yang menyertakan nama skill / To activate a specific skill, simply provide a natural language instruction to the AI agent containing the skill name:
 
-> **ID**: *"Gunakan skill **discover-phenomenon-and-gap** untuk mengeksplorasi tren teknologi baterai solid-state."*
+### 🚀 1. Alur Orkestrasi Otomatis (Automatic Orchestration Flow - RECOMMENDED)
+Untuk memulai seluruh alur penelitian otomatis dari satu pintu masuk, jalankan skill **`research-orchestrator`** dengan memberikan topik atau domain riset Anda.
+
+> **ID**: *"Gunakan skill **research-orchestrator** untuk memulai riset otomatis penuh tentang efektivitas Graph Neural Networks dalam fraud detection transaksi keuangan."*
 >
-> **EN**: *"Use the **discover-phenomenon-and-gap** skill to explore trends in solid-state battery technology."*
+> **EN**: *"Use the **research-orchestrator** skill to start a full automatic research flow on the effectiveness of Graph Neural Networks for financial transaction fraud detection."*
+
+Setelah diaktifkan, agen akan menjalankan Fase 1 hingga Fase 4 secara otomatis dan memberikan keluaran akhir berupa **Integrated Research Dashboard**.
+
+---
+
+### 🛠️ 2. Menjalankan Skill Secara Terpisah (Individual Execution)
+Anda juga dapat memicu setiap skill secara terpisah menggunakan perintah berbahasa alami:
+
+> **ID**: *"Gunakan skill **academic-peer-reviewer** untuk meninjau draf paper ini secara kritis."*
+>
+> **EN**: *"Use the **academic-peer-reviewer** skill to critically review this manuscript draft."*

@@ -9,6 +9,8 @@ description: >-
 ## Overview
 Skill ini dirancang untuk membantu penemu, peneliti, dan spesialis kekayaan intelektual (IP) dalam mengidentifikasi apakah suatu invensi teknologi baru sudah pernah dipublikasikan sebelumnya dalam bentuk paper ilmiah (mendeteksi *prior art*). Agen memetakan klaim paten terhadap makalah-makalah ilmiah yang relevan dan menghitung kecocokan konsepnya untuk mengukur aspek kebaruan (*novelty*).
 
+*Peringatan Hukum: Analisis ini bersifat analitis-akademik dan bukan merupakan pendapat hukum resmi atau pengganti konsultasi dengan kuasa hukum paten terdaftar.*
+
 ## Dependencies
 - `literature-search-openalex`
 - `literature-search-arxiv`
@@ -29,27 +31,27 @@ Contoh penggunaan:
 - Buat query pencarian terarah berdasarkan komponen klaim tersebut.
 - Lakukan pencarian literatur menggunakan tools database ilmiah (OpenAlex, arXiv, dll.).
 
-### 3. Pemetaan & Pencocokan Klaim (Claim Mapping)
-- Bandingkan setiap komponen klaim invensi dengan paper-paper ilmiah teratas hasil pencarian.
-- Buat **claim-mapping table** untuk mendokumentasikan kecocokan:
-  - Komponen Klaim Invensi (e.g., "Penggunaan graphene oxide coating")
-  - Paper Ilmiah yang Relevan (e.g., "Smith et al., 2021 menemukan pelapisan graphene oxide pada...")
-  - Status Kebaruan (e.g., Identik / Mirip / Baru)
-  - Penjelasan & Batasan Perbandingan
+### 3. Pemetaan & Pencocokan Klaim (Claim Mapping Table)
+Bandingkan setiap komponen klaim invensi dengan paper-paper ilmiah teratas hasil pencarian. Buat **Claim-Mapping Table** wajib dengan format berikut:
+| Klaim Invensi | Padanan di Literatur | Tingkat Kemiripan | Potensi Prior Art | Catatan Novelty |
+|---|---|---|---|---|
 
-### 4. Penilaian Risiko Prior Art
-- Klasifikasikan tingkat risiko *prior art* secara keseluruhan:
-  - **Tinggi**: Komponen klaim utama sangat mirip atau identik dengan publikasi yang sudah ada.
-  - **Sedang**: Ada kesamaan konsep dasar, namun aplikasi atau metode implementasi spesifiknya berbeda.
-  - **Rendah**: Konsep invensi belum ditemukan atau dipublikasikan dalam literatur ilmiah terindeks.
+### 4. Penentuan Kategori Tingkat Kemiripan & Risiko Prior Art
+Klasifikasikan kemiripan setiap klaim komponen menggunakan kategori formal berikut:
+- **Identical**: Klaim memiliki deskripsi teknis dan alur mekanisme kerja yang hampir persis sama dengan literatur pembanding.
+- **Highly Similar**: Mekanisme inti atau fungsi utama sangat mirip, meskipun terdapat variasi parameter kecil.
+- **Partially Similar**: Sebagian komponen klaim memiliki kecocokan, namun komponen penunjang lainnya berbeda.
+- **Conceptually Related**: Ide umum memiliki keterkaitan (menggunakan paradigma atau teori dasar yang sama), namun implementasi dan kombinasi metodenya berbeda secara signifikan.
+- **No Clear Match**: Belum ditemukan padanan konsep atau mekanisme kerja yang jelas di dalam literatur.
 
-### 5. Penyusunan Laporan Evaluasi Kebaruan
-Format laporan:
-- **Ringkasan Eksekutif**: Penilaian tingkat risiko prior art dan status novelty.
-- **Tabel Pemetaan Klaim**: Detail perbandingan komponen per komponen.
-- **Ulasan Publikasi Relevan**: Analisis kritis terhadap paper-paper ilmiah yang paling mirip dengan invensi.
-- **Rekomendasi Riset/Paten**: Langkah yang disarankan (misalnya mempersempit ruang lingkup klaim paten agar lebih spesifik).
+### 5. Analisis Pembeda Novelty
+Uraikan penilaian kebaruan ke dalam beberapa kategori novelty berikut:
+- **Novelty Akademik**: Apakah konsep mendasar dari invensi ini memecahkan masalah teoretis baru yang belum pernah dijawab di literatur.
+- **Novelty Teknis**: Apakah desain arsitektur/sistem yang diusulkan memiliki keunikan operasional.
+- **Novelty Implementasi**: Apakah penggunaan teknologi ini dalam domain aplikasi tertentu merupakan hal yang baru secara praktis.
+- **Novelty Klaim Paten**: Apakah kombinasi seluruh elemen dalam klaim mandiri belum pernah dipublikasikan sebagai kesatuan fungsional di masa lalu.
 
-## Common Mistakes
+## Common Mistakes & Aturan Kritis
 - **Hanya Mencocokkan Kata Kunci**: Menganggap riset identik hanya karena menggunakan kata kunci yang sama tanpa memahami konteks teknologi secara mendalam.
 - **Klaim Parsial**: Hanya membandingkan satu aspek dari invensi dan mengabaikan aspek inovatif lainnya yang terintegrasi.
+- **Overclaiming Hukum**: Mengambil kesimpulan hukum mutlak bahwa invensi "pasti disetujui" atau "pasti ditolak" oleh kantor paten. Selalu gunakan perspektif indikatif ("Potensi Prior Art Tinggi/Sedang/Rendah") dan lampirkan disclaimer hukum.
