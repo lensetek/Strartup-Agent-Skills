@@ -154,7 +154,11 @@ Anda juga dapat memicu setiap skill secara terpisah:
 
 ### 🧬 3. Personalisasi Agen Secara Otonom (Autonomous & Seamless Personalization)
 
-Proyek ini dilengkapi dengan berkas aturan global **[.antigravityrules](file:///c:/Users/ACER/Documents/antigravity/Startup-Agents/.antigravityrules)** dan **[.cursorrules](file:///c:/Users/ACER/Documents/antigravity/Startup-Agents/.cursorrules)** yang membuat alur personalisasi berjalan secara **100% otonom dan seamless**:
+Proyek ini dilengkapi dengan berkas aturan global yang membuat alur personalisasi berjalan secara **100% otonom dan seamless** di berbagai asisten AI:
+- **Antigravity/Gemini**: Menggunakan berkas **[.antigravityrules](file:///c:/Users/ACER/Documents/antigravity/Startup-Agents/.antigravityrules)**.
+- **Claude Code**: Menggunakan berkas **[CLAUDE.md](file:///c:/Users/ACER/Documents/antigravity/Startup-Agents/CLAUDE.md)** (standar resmi instruksi Anthropic).
+- **Codex**: Menggunakan berkas **[.codexrules](file:///c:/Users/ACER/Documents/antigravity/Startup-Agents/.codexrules)**.
+- **Cursor / VS Code AI Extensions**: Menggunakan berkas **[.cursorrules](file:///c:/Users/ACER/Documents/antigravity/Startup-Agents/.cursorrules)**.
 
 *   **Deteksi & Pemindaian Otomatis (Auto-Scan):**
     Setiap kali asisten AI memulai tugas baru di workspace ini, ia akan memeriksa secara mandiri apakah berkas profil `.agents/startup_dna.md` sudah ada dan up-to-date. Jika belum ada atau jika dependensi Anda berubah, asisten AI akan memindai proyek Anda dan menghasilkan berkas DNA tersebut **secara otonom di latar belakang**. Anda tidak perlu mengetik perintah atau memberikan prompt apa pun.
