@@ -123,6 +123,7 @@
                 <a href="#quickstart" class="hover:text-themeText transition-colors duration-200">Installation</a>
                 <a href="#workflows" class="hover:text-themeText transition-colors duration-200">Workflows</a>
                 <a href="#skills" class="hover:text-themeText transition-colors duration-200">Agent Skills</a>
+                <a href="#personalization" class="hover:text-themeText transition-colors duration-200">Personalization</a>
                 <a href="#security" class="hover:text-themeText transition-colors duration-200">Security Policy</a>
             </nav>
 
@@ -145,7 +146,7 @@
             <div class="inline-flex items-center px-4 py-2 rounded-full text-xs font-medium bg-themeCard/60 text-themeTextSecondary border border-themeBorderCard/60 mb-6 backdrop-blur-sm shadow-inner">
                 <span class="text-accentPink mr-2">New Release</span>
                 <span class="text-themeTextMuted mr-2">|</span>
-                <span>Modular AI Agents for Digital Startups v1.0.0</span>
+                <span>Modular AI Agents for Digital Startups v1.1.0</span>
             </div>
             
             <h1 class="text-4xl sm:text-6xl lg:text-7xl font-outfit font-black tracking-tight leading-tight max-w-5xl mx-auto text-themeText">
@@ -164,7 +165,7 @@
                 </a>
             </div>
 
-            <!-- Quick Start Command Card -->
+            <!-- Prompt Installation Card -->
             <div id="quickstart" class="mt-12 max-w-2xl mx-auto">
                 <div class="bg-themeCard border border-themeBorderCard rounded-2xl p-6 shadow-themeCard relative overflow-hidden backdrop-blur-md">
                     <!-- Glow decoration inside card -->
@@ -175,88 +176,28 @@
                             <span class="w-3.5 h-3.5 rounded-full bg-red-500/80"></span>
                             <span class="w-3.5 h-3.5 rounded-full bg-yellow-500/80"></span>
                             <span class="w-3.5 h-3.5 rounded-full bg-green-500/80"></span>
-                            <span class="text-xs text-themeTextMuted font-mono ml-2">Terminal - Quick Install</span>
+                            <span class="text-xs text-themeTextMuted font-mono ml-2">Agent Prompt - Instant Setup</span>
                         </div>
-                        <div class="text-xs text-themeTextSecondary font-medium hidden sm:block">Git / Prompt</div>
+                        <div class="text-xs text-themeTextSecondary font-medium hidden sm:block">AI-first / Prompt Installation</div>
                     </div>
 
-                    <!-- Tabs for CLI vs Manual -->
-                    <div class="flex border-b border-themeBorderCard mb-4">
-                        <button onclick="switchInstallTab('npx')" id="installTab-npx" class="px-4 py-2 text-xs font-bold font-mono tracking-wider border-b-2 border-accentBlue text-accentBlue transition-all duration-200">
-                            CLI INSTALLER (NODE)
-                        </button>
-                        <button onclick="switchInstallTab('git')" id="installTab-git" class="px-4 py-2 text-xs font-bold font-mono tracking-wider border-b-2 border-transparent text-themeTextMuted hover:text-themeText transition-all duration-200">
-                            MANUAL IMPORT (GIT)
-                        </button>
-                    </div>
-
-                    <!-- CLI Install Content -->
-                    <div id="installPanel-npx" class="space-y-4 text-left font-mono">
+                    <!-- English Prompts (English Only) -->
+                    <div class="space-y-4 text-left font-mono">
                         <div>
-                            <span class="text-themeTextMuted block text-xs mb-1">// Option A: Local project initialization (inside your existing project)</span>
+                            <span class="text-themeTextMuted block text-xs mb-1">// Step 1: Copy this prompt and send it to your AI assistant</span>
                             <div class="bg-themeTerminal rounded-xl p-4 flex items-center justify-between border border-themeBorderCard group hover:border-accentBlue/50 transition-all duration-300">
-                                <span class="text-accentBlue select-all break-all flex-1 min-w-0 mr-2">node bin/cli.js init</span>
-                                <button onclick="copyCommand('node bin/cli.js init', this)" class="text-themeTextSecondary hover:text-themeText p-2 rounded-lg hover:bg-themeTerminal/80 transition-all duration-200 flex-shrink-0" title="Copy to clipboard">
+                                <span class="text-accentBlue select-all break-word flex-1 min-w-0 mr-2 text-sm leading-relaxed font-semibold">Download and install agent skills from this repository: https://github.com/lensetek/Startup-Agent-Skills-Hub</span>
+                                <button onclick="copyCommand('Download and install agent skills from this repository: https://github.com/lensetek/Startup-Agent-Skills-Hub', this)" class="text-themeTextSecondary hover:text-themeText p-2 rounded-lg hover:bg-themeTerminal/80 transition-all duration-200 flex-shrink-0" title="Copy Prompt">
                                     <i class="fa-regular fa-copy"></i>
                                 </button>
                             </div>
                         </div>
 
                         <div>
-                            <span class="text-themeTextMuted block text-xs mb-1">// Option B: Global installation for Antigravity, Claude Code, or Codex</span>
+                            <span class="text-themeTextMuted block text-xs mb-1">// Step 2: Verify the number of installed agents in your project</span>
                             <div class="bg-themeTerminal rounded-xl p-4 flex items-center justify-between border border-themeBorderCard group hover:border-accentPurple/50 transition-all duration-300">
-                                <span id="npxCommandDisplay" class="text-accentPurple select-all break-all flex-1 min-w-0 mr-2">node bin/cli.js install-plugin --target antigravity</span>
-                                <button onclick="copyCommand('node bin/cli.js install-plugin --target antigravity', this)" class="text-themeTextSecondary hover:text-themeText p-2 rounded-lg hover:bg-themeTerminal/80 transition-all duration-200 flex-shrink-0" title="Copy to clipboard">
-                                    <i class="fa-regular fa-copy"></i>
-                                </button>
-                            </div>
-                            <div class="mt-2 flex flex-wrap gap-2 items-center">
-                                <span class="text-[10px] text-themeTextMuted">Select Target:</span>
-                                <button onclick="updateInstallCommand('node bin/cli.js install-plugin --target antigravity', this)" class="px-2 py-0.5 rounded bg-themeTerminal border border-accentBlue/60 text-[10px] text-accentBlue transition-all duration-200 font-bold">--target antigravity</button>
-                                <button onclick="updateInstallCommand('node bin/cli.js install-plugin --target claude', this)" class="px-2 py-0.5 rounded bg-themeTerminal border border-themeBorderCard hover:border-accentBlue/50 text-[10px] text-themeText transition-all duration-200">--target claude</button>
-                                <button onclick="updateInstallCommand('node bin/cli.js install-plugin --target codex', this)" class="px-2 py-0.5 rounded bg-themeTerminal border border-themeBorderCard hover:border-accentBlue/50 text-[10px] text-themeText transition-all duration-200">--target codex</button>
-                                <button onclick="updateInstallCommand('node bin/cli.js install-plugin --path <custom-folder>', this)" class="px-2 py-0.5 rounded bg-themeTerminal border border-themeBorderCard hover:border-accentBlue/50 text-[10px] text-themeText transition-all duration-200">--path &lt;custom-folder&gt;</button>
-                            </div>
-                        </div>
-
-                        <div>
-                            <span class="text-themeTextMuted block text-xs mb-1">// Starter example: use the first strategy skill</span>
-                            <div class="bg-themeTerminal rounded-xl p-4 flex items-center justify-between border border-themeBorderCard group hover:border-accentPink/50 transition-all duration-300">
-                                <span class="text-accentPink select-all break-all flex-1 min-w-0 mr-2">Use the ceo-strategy-planner skill to evaluate my startup idea and create a CEO Vision Document.</span>
-                                <button onclick="copyCommand('Use the ceo-strategy-planner skill to evaluate my startup idea and create a CEO Vision Document.', this)" class="text-themeTextSecondary hover:text-themeText p-2 rounded-lg hover:bg-themeTerminal/80 transition-all duration-200 flex-shrink-0" title="Copy to clipboard">
-                                    <i class="fa-regular fa-copy"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Git Install Content -->
-                    <div id="installPanel-git" class="space-y-4 text-left font-mono hidden">
-                        <div>
-                            <span class="text-themeTextMuted block text-xs mb-1">// 1. Clone the repository into your system</span>
-                            <div class="bg-themeTerminal rounded-xl p-4 flex items-center justify-between border border-themeBorderCard group hover:border-accentBlue/50 transition-all duration-300">
-                                <span class="text-accentBlue select-all break-all flex-1 min-w-0 mr-2">git clone https://github.com/lensetek/Startup-Agent-Skills-Hub.git</span>
-                                <button onclick="copyCommand('git clone https://github.com/lensetek/Startup-Agent-Skills-Hub.git', this)" class="text-themeTextSecondary hover:text-themeText p-2 rounded-lg hover:bg-themeTerminal/80 transition-all duration-200 flex-shrink-0" title="Copy to clipboard">
-                                    <i class="fa-regular fa-copy"></i>
-                                </button>
-                            </div>
-                        </div>
-
-                        <div>
-                            <span class="text-themeTextMuted block text-xs mb-1">// or, pull updates inside your cloned directory</span>
-                            <div class="bg-themeTerminal rounded-xl p-4 flex items-center justify-between border border-themeBorderCard group hover:border-accentGreen/50 transition-all duration-300">
-                                <span class="text-accentGreen select-all break-all flex-1 min-w-0 mr-2">cd Startup-Agent-Skills-Hub && git pull</span>
-                                <button onclick="copyCommand('cd Startup-Agent-Skills-Hub && git pull', this)" class="text-themeTextSecondary hover:text-themeText p-2 rounded-lg hover:bg-themeTerminal/80 transition-all duration-200 flex-shrink-0" title="Copy to clipboard">
-                                    <i class="fa-regular fa-copy"></i>
-                                </button>
-                            </div>
-                        </div>
-
-                        <div>
-                            <span class="text-themeTextMuted block text-xs mb-1">// 2. Ask your AI agent to register all 16 skills recursively</span>
-                            <div class="bg-themeTerminal rounded-xl p-4 flex items-center justify-between border border-themeBorderCard group hover:border-accentPurple/50 transition-all duration-300">
-                                <span class="text-accentPurple select-all break-all flex-1 min-w-0 mr-2">Copy all subdirectories inside the 'skills/' folder of the cloned Startup-Agent-Skills-Hub repository, then register each of them as a callable skill using their folder names along with their 'SKILL.md' files and YAML frontmatter.</span>
-                                <button onclick="copyCommand('Copy all subdirectories inside the \'skills/\' folder of the cloned Startup-Agent-Skills-Hub repository, then register each of them as a callable skill using their folder names along with their \'SKILL.md\' files and YAML frontmatter.', this)" class="text-themeTextSecondary hover:text-themeText p-2 rounded-lg hover:bg-themeTerminal/80 transition-all duration-200 flex-shrink-0" title="Copy to clipboard">
+                                <span class="text-accentPurple select-all break-word flex-1 min-w-0 mr-2 text-sm leading-relaxed font-semibold">Verify how many agents/skills are present in my project right now and register all of them.</span>
+                                <button onclick="copyCommand('Verify how many agents/skills are present in my project right now and register all of them.', this)" class="text-themeTextSecondary hover:text-themeText p-2 rounded-lg hover:bg-themeTerminal/80 transition-all duration-200 flex-shrink-0" title="Copy Prompt">
                                     <i class="fa-regular fa-copy"></i>
                                 </button>
                             </div>
@@ -525,6 +466,51 @@
         <div id="noResults" class="hidden text-center py-12">
             <i class="fa-regular fa-folder-open text-themeTextMuted text-5xl mb-4"></i>
             <p class="text-themeTextSecondary font-medium">No agent skills match your search filters.</p>
+        </div>
+    </section>
+
+    <!-- Personalization & Project DNA Section -->
+    <section id="personalization" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-themeBorder">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+                <span class="text-accentPink text-sm font-bold tracking-widest uppercase block mb-3">Tailored Experience</span>
+                <h3 class="text-3xl sm:text-5xl font-outfit font-extrabold text-themeText mb-6">Personalize Agents to Your Stack</h3>
+                
+                <p class="text-themeTextSecondary text-sm leading-relaxed mb-6">
+                    Make agents smart and highly personalized by defining your project DNA. AI agents will automatically adapt their outputs to match your custom libraries, security requirements, and target customer personas without needing constant reminders.
+                </p>
+                
+                <div class="space-y-4 font-mono text-xs">
+                    <div class="bg-themeTerminal rounded-xl p-4 border border-themeBorderCard flex flex-col gap-2">
+                        <span class="text-themeTextMuted">// Run this command to scan tech stack & generate profile automatically</span>
+                        <div class="flex items-center justify-between mt-1">
+                            <span class="text-accentGreen">node bin/init-dna.js</span>
+                            <button onclick="copyCommand('node bin/init-dna.js', this)" class="text-themeTextSecondary hover:text-themeText p-2 rounded-lg hover:bg-themeTerminal/80 transition-all duration-200" title="Copy command">
+                                <i class="fa-regular fa-copy"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-themeCard border border-themeBorderCard rounded-3xl p-6 sm:p-8 shadow-themeCard relative font-mono text-[11px] leading-relaxed max-w-lg mx-auto w-full">
+                <div class="absolute -top-3 left-6 bg-accentPink text-[9px] uppercase font-bold tracking-widest px-2 py-0.5 rounded text-white">Generated: .agents/startup_dna.md</div>
+                <div class="text-themeTextMuted mb-2"># Startup DNA & Project Preferences</div>
+                
+                <div class="text-themeText"><span class="text-accentPurple">## 1. Business Profile</span></div>
+                <div class="text-themeTextSecondary pl-4">- Project Name: CleanEat</div>
+                <div class="text-themeTextSecondary pl-4">- Target Market: Jakarta urban professionals</div>
+                <div class="text-themeTextSecondary pl-4">- Primary Language: Indonesian (Marketing), English (Code)</div>
+                
+                <div class="text-themeText mt-3"><span class="text-accentPurple">## 2. Detected Tech Stack</span></div>
+                <div class="text-themeTextSecondary pl-4">- Frontend: <span class="text-accentBlue">Vanilla HTML/JS</span></div>
+                <div class="text-themeTextSecondary pl-4">- Backend: <span class="text-accentBlue">Node.js (Express)</span></div>
+                <div class="text-themeTextSecondary pl-4">- Styling: <span class="text-accentBlue">Vanilla CSS</span></div>
+                
+                <div class="text-themeText mt-3"><span class="text-accentPurple">## 3. Security Rules</span></div>
+                <div class="text-themeTextSecondary pl-4">- API Keys must be stored in .env</div>
+                <div class="text-themeTextSecondary pl-4">- Mobile-first prioritization</div>
+            </div>
         </div>
     </section>
 
