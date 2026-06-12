@@ -482,10 +482,10 @@
                 
                 <div class="space-y-4 font-mono text-xs">
                     <div class="bg-themeTerminal rounded-xl p-4 border border-themeBorderCard flex flex-col gap-2">
-                        <span class="text-themeTextMuted">// Run this command to scan tech stack & generate profile automatically</span>
+                        <span class="text-themeTextMuted">// Copy and send this prompt to personalize your agents automatically</span>
                         <div class="flex items-center justify-between mt-1">
-                            <span class="text-accentGreen">node bin/init-dna.js</span>
-                            <button onclick="copyCommand('node bin/init-dna.js', this)" class="text-themeTextSecondary hover:text-themeText p-2 rounded-lg hover:bg-themeTerminal/80 transition-all duration-200" title="Copy command">
+                            <span class="text-accentGreen select-all break-word flex-1 min-w-0 mr-2 text-sm leading-relaxed font-semibold">Analyze my project structure and dependencies, then automatically generate my startup_dna.md file inside the .agents directory.</span>
+                            <button onclick="copyCommand('Analyze my project structure and dependencies, then automatically generate my startup_dna.md file inside the .agents directory.', this)" class="text-themeTextSecondary hover:text-themeText p-2 rounded-lg hover:bg-themeTerminal/80 transition-all duration-200" title="Copy Prompt">
                                 <i class="fa-regular fa-copy"></i>
                             </button>
                         </div>

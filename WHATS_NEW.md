@@ -23,14 +23,18 @@ Pemasangan kini jauh lebih sederhana! Anda tidak perlu lagi menjalankan perintah
 
 #### 2. 🧬 Auto-Scan Project DNA & Personalization (`startup_dna.md`)
 Kini agen Anda bisa bekerja lebih pintar dan patuh pada spesifikasi teknologi Anda tanpa harus diingatkan berulang kali.
-- **Script Otomatisasi `bin/init-dna.js`**: Cukup jalankan `node bin/init-dna.js` untuk memindai dependencies proyek Anda. Script akan mendeteksi framework frontend, Express/Nest backend, PostgreSQL/Firebase database, hingga sistem CSS/Tailwind yang Anda pakai secara otomatis.
-- **Single Source of Truth**: Hasil pemindaian disimpan di `.agents/startup_dna.md` sebagai panduan global bagi seluruh agen saat menulis kode untuk proyek Anda.
+- **Inisialisasi via Prompt**: Anda tidak perlu menjalankan perintah di terminal. Cukup instruksikan asisten AI Anda menggunakan prompt:
+  ```text
+  Analyze my project structure and dependencies, then automatically generate my startup_dna.md file inside the .agents directory.
+  ```
+  AI asisten Anda akan secara otomatis memindai struktur proyek dan membuat profil DNA tersebut.
+- **Single Source of Truth**: Profil disimpan di `.agents/startup_dna.md` sebagai panduan global bagi seluruh agen saat menulis kode untuk proyek Anda.
 
 #### 3. 🧠 Kolektif Memori & Feedback Loop (`session_memory.md`)
 Agen sekarang dibekali memori sesi terstruktur di `.agents/session_memory.md`. Setiap kali Anda menyetujui perubahan arsitektur atau memberikan koreksi, agen akan mencatatnya di sana sehingga agen lain dalam tim virtual Anda tidak akan menanyakan atau mengulangi kesalahan yang sama.
 
 ### Apa yang Berubah di Codebase?
-*   **[NEW]** **[init-dna.js](file:///c:/Users/ACER/Documents/antigravity/Startup-Agents/bin/init-dna.js)**: Script Node.js untuk pemindaian dan pembuatan draf DNA proyek otomatis.
+*   **[NEW]** **[init-dna.js](file:///c:/Users/ACER/Documents/antigravity/Startup-Agents/bin/init-dna.js)**: Script internal untuk pemindaian tech stack proyek di latar belakang.
 *   **[MODIFY]** **[README.md](file:///c:/Users/ACER/Documents/antigravity/Startup-Agents/README.md)**: Panduan instalasi dan penggunaan diperbarui sepenuhnya dengan metode prompt natural dan personalisasi DNA.
 *   **[MODIFY]** **[index.html](file:///c:/Users/ACER/Documents/antigravity/Startup-Agents/index.html)**: Visual dashboard diperbarui untuk menampilkan modul Prompt-Based Copy, tab bilingual (ID/EN), navigasi personalisasi, serta visualisasi file `startup_dna.md`.
 
@@ -55,14 +59,18 @@ Installation is now much simpler! You no longer need to run complex Node or Git 
 
 #### 2. 🧬 Auto-Scan Project DNA & Personalization (`startup_dna.md`)
 Your agents can now work smarter and comply with your exact tech stack without constant reminders.
-- **Automation Script `bin/init-dna.js`**: Just run `node bin/init-dna.js` to scan your project dependencies. The script automatically detects frontend frameworks, Express/Nest backends, PostgreSQL/Firebase databases, and CSS/Tailwind styling.
-- **Single Source of Truth**: The scan results are saved under `.agents/startup_dna.md` as a global guide for all agents when generating code for your project.
+- **Initialization via Prompt**: You do not need to run terminal commands. Just instruct your AI assistant using the prompt:
+  ```text
+  Analyze my project structure and dependencies, then automatically generate my startup_dna.md file inside the .agents directory.
+  ```
+  Your AI assistant will automatically scan your project structure and generate the DNA profile.
+- **Single Source of Truth**: The profile is saved under `.agents/startup_dna.md` as a global guide for all agents when generating code for your project.
 
 #### 3. 🧠 Collective Memory & Feedback Loop (`session_memory.md`)
 Agents are now equipped with structured session memory in `.agents/session_memory.md`. Whenever you approve an architectural decision or make a correction, the agent logs it there so other agents in your virtual team do not repeat the same mistakes.
 
 ### What Changed in the Codebase?
-*   **[NEW]** **[init-dna.js](file:///c:/Users/ACER/Documents/antigravity/Startup-Agents/bin/init-dna.js)**: Node.js script for automated scanning and project DNA generation.
+*   **[NEW]** **[init-dna.js](file:///c:/Users/ACER/Documents/antigravity/Startup-Agents/bin/init-dna.js)**: Internal script for background project tech stack scanning.
 *   **[MODIFY]** **[README.md](file:///c:/Users/ACER/Documents/antigravity/Startup-Agents/README.md)**: Completely updated installation and usage guides using the natural prompt method and DNA personalization.
 *   **[MODIFY]** **[index.html](file:///c:/Users/ACER/Documents/antigravity/Startup-Agents/index.html)**: Updated landing page dashboard UI to showcase the Prompt-Based Copy module, bilingual tabs (ID/EN), personalization navigation, and the `startup_dna.md` visualizer.
 

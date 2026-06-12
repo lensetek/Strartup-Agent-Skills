@@ -152,17 +152,24 @@ Anda juga dapat memicu setiap skill secara terpisah:
 
 ---
 
-### 🧬 3. Personalisasi Agen (Startup DNA & Memory)
+### 🧬 3. Personalisasi Agen (Startup DNA & Memory / Project Personalization)
 
-Agen Anda dapat dipersonalisasikan agar otomatis mengetahui spesifikasi teknologi (*tech stack*) dan preferensi bisnis Anda menggunakan file `.agents/startup_dna.md`.
+Agen Anda dapat dipersonalisasikan agar otomatis mengetahui spesifikasi teknologi (*tech stack*) dan preferensi bisnis Anda menggunakan file profil `.agents/startup_dna.md`.
+Your agents can be personalized to automatically adapt to your tech stack and business preferences using the `.agents/startup_dna.md` profile.
 
-*   **Inisialisasi DNA Otomatis (Automatic Scan):**
-    Jalankan perintah berikut untuk menganalisis struktur dependencies proyek Anda secara otomatis dan membuat draf profil DNA:
-    ```bash
-    node bin/init-dna.js
+*   **🇮🇩 Bahasa Indonesia (Inisialisasi via Prompt):**
+    Anda tidak perlu menjalankan perintah terminal yang rumit. Cukup berikan instruksi langsung (prompt) berikut ke asisten AI Anda:
+    ```text
+    Analyze my project structure and dependencies, then automatically generate my startup_dna.md file inside the .agents directory.
     ```
-*   **Cara Kerja Agen:**
-    Setelah file `.agents/startup_dna.md` terbuat, agen akan membaca preferensi tersebut secara otomatis di awal interaksi untuk menyesuaikan kode yang ditulis (misal menggunakan database PostgreSQL, CSS murni, dsb.).
+    Asisten AI Anda akan secara otomatis memindai struktur proyek, menganalisis file konfigurasi/dependensi, dan menghasilkan file profil DNA proyek untuk Anda.
+
+*   **🇬🇧 English (Initialization via Prompt):**
+    You do not need to run complex terminal commands. Just give the following prompt instructions to your AI assistant:
+    ```text
+    Analyze my project structure and dependencies, then automatically generate my startup_dna.md file inside the .agents directory.
+    ```
+    Your AI assistant will automatically scan your project structure, analyze configuration/dependency files, and generate the project DNA profile for you.
 
 ---
 
