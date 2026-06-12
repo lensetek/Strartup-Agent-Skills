@@ -101,11 +101,15 @@ This repository is a modular collection of **Skills** for **Startup Agents** —
 Anda tidak perlu menjalankan perintah terminal yang rumit. Cukup berikan instruksi langsung (prompt) berikut ke asisten AI Anda:
 
 1.  **Prompt Unduh & Pasang:**
-    > *"Download dan install agent skills ini https://github.com/lensetek/Startup-Agent-Skills-Hub"*
+    ```text
+    Download dan install agent skills ini https://github.com/lensetek/Startup-Agent-Skills-Hub
+    ```
 
 2.  **Prompt Verifikasi:**
     Untuk memverifikasi apakah semua agen/skills telah terpasang dengan benar di proyek Anda:
-    > *"Verifikasi ada berapa agent/skills yang terdapat di project saya saat ini dan daftarkan semuanya."*
+    ```text
+    Verifikasi ada berapa agent/skills yang terdapat di project saya saat ini dan daftarkan semuanya.
+    ```
 
 ---
 
@@ -114,11 +118,15 @@ Anda tidak perlu menjalankan perintah terminal yang rumit. Cukup berikan instruk
 You do not need to run complex terminal commands. Just give the following prompt instructions to your AI assistant:
 
 1.  **Download & Install Prompt:**
-    > *"Download and install agent skills from this repository: https://github.com/lensetek/Startup-Agent-Skills-Hub"*
+    ```text
+    Download and install agent skills from this repository: https://github.com/lensetek/Startup-Agent-Skills-Hub
+    ```
 
 2.  **Verification Prompt:**
     To verify how many agents/skills are successfully installed in your project:
-    > *"Verify how many agents/skills are present in my project right now and register all of them."*
+    ```text
+    Verify how many agents/skills are present in my project right now and register all of them.
+    ```
 
 ---
 

@@ -13,9 +13,13 @@ Kami senang mengumumkan rilis versi **v1.1.0** yang membawa pembaruan besar pada
 #### 1. 🤖 AI-First & Prompt-Based Installation (Rekomendasi)
 Pemasangan kini jauh lebih sederhana! Anda tidak perlu lagi menjalankan perintah terminal Node atau Git manual yang rumit di workspace Anda.
 - **Unduh & Pasang Instan**: Cukup berikan link Github dan perintahkan agen AI Anda melalui prompt natural:
-  > *"Download dan install agent skills ini https://github.com/lensetek/Startup-Agent-Skills-Hub"*
+  ```text
+  Download dan install agent skills ini https://github.com/lensetek/Startup-Agent-Skills-Hub
+  ```
 - **Verifikasi Mandiri**: AI dapat secara mandiri memeriksa jumlah agen terinstal dengan prompt:
-  > *"Verifikasi ada berapa agent/skills yang terdapat di project saya saat ini dan daftarkan semuanya."*
+  ```text
+  Verifikasi ada berapa agent/skills yang terdapat di project saya saat ini dan daftarkan semuanya.
+  ```
 
 #### 2. 🧬 Auto-Scan Project DNA & Personalization (`startup_dna.md`)
 Kini agen Anda bisa bekerja lebih pintar dan patuh pada spesifikasi teknologi Anda tanpa harus diingatkan berulang kali.
@@ -41,9 +45,13 @@ We are excited to announce the release of **v1.1.0**, bringing major updates to 
 #### 1. 🤖 AI-First & Prompt-Based Installation (Recommended)
 Installation is now much simpler! You no longer need to run complex Node or Git terminal commands in your workspace.
 - **Instant Download & Install**: Just provide the GitHub link and instruct your AI assistant using a natural language prompt:
-  > *"Download and install agent skills from this repository: https://github.com/lensetek/Startup-Agent-Skills-Hub"*
+  ```text
+  Download and install agent skills from this repository: https://github.com/lensetek/Startup-Agent-Skills-Hub
+  ```
 - **Self-Verification**: The AI can independently verify the number of installed agents with the prompt:
-  > *"Verify how many agents/skills are present in my project right now and register all of them."*
+  ```text
+  Verify how many agents/skills are present in my project right now and register all of them.
+  ```
 
 #### 2. 🧬 Auto-Scan Project DNA & Personalization (`startup_dna.md`)
 Your agents can now work smarter and comply with your exact tech stack without constant reminders.
