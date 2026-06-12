@@ -154,11 +154,12 @@ Anda juga dapat memicu setiap skill secara terpisah:
 
 ### 🧬 3. Personalisasi Agen Secara Otonom (Autonomous & Seamless Personalization)
 
-Proyek ini dilengkapi dengan berkas aturan global yang membuat alur personalisasi berjalan secara **100% otonom dan seamless** di berbagai asisten AI:
+Proyek ini dilengkapi dengan berkas aturan universal **[ai_instructions.md](file:///c:/Users/ACER/Documents/antigravity/Startup-Agents/ai_instructions.md)** yang bertindak sebagai *Single Source of Truth* untuk instruksi asisten AI. Untuk kepatuhan lintas platform, berbagai berkas aturan spesifik berikut juga telah disediakan dan merujuk langsung ke berkas utama tersebut:
 - **Antigravity/Gemini**: Menggunakan berkas **[.antigravityrules](file:///c:/Users/ACER/Documents/antigravity/Startup-Agents/.antigravityrules)**.
-- **Claude Code**: Menggunakan berkas **[CLAUDE.md](file:///c:/Users/ACER/Documents/antigravity/Startup-Agents/CLAUDE.md)** (standar resmi instruksi Anthropic).
+- **Claude Code**: Menggunakan berkas **[CLAUDE.md](file:///c:/Users/ACER/Documents/antigravity/Startup-Agents/CLAUDE.md)** (standar resmi Anthropic).
 - **Codex**: Menggunakan berkas **[.codexrules](file:///c:/Users/ACER/Documents/antigravity/Startup-Agents/.codexrules)**.
 - **Cursor / VS Code AI Extensions**: Menggunakan berkas **[.cursorrules](file:///c:/Users/ACER/Documents/antigravity/Startup-Agents/.cursorrules)**.
+- **Asisten AI Lainnya (ChatGPT, Copilot, dsb.)**: Secara otomatis membaca berkas utama **[ai_instructions.md](file:///c:/Users/ACER/Documents/antigravity/Startup-Agents/ai_instructions.md)**.
 
 *   **Deteksi & Pemindaian Otomatis (Auto-Scan):**
     Setiap kali asisten AI memulai tugas baru di workspace ini, ia akan memeriksa secara mandiri apakah berkas profil `.agents/startup_dna.md` sudah ada dan up-to-date. Jika belum ada atau jika dependensi Anda berubah, asisten AI akan memindai proyek Anda dan menghasilkan berkas DNA tersebut **secara otonom di latar belakang**. Anda tidak perlu mengetik perintah atau memberikan prompt apa pun.

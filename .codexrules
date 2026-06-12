@@ -1,14 +1,4 @@
-# Codex Autonomous Project Rules
+# Codex Rules Override
 
-## 1. Autonomous Project Personalization (Seamless DNA)
-- **Automatic Check**: At the start of every session, task, or directory analysis, autonomously check if `.agents/startup_dna.md` exists.
-- **Autonomous Scan**: If the file is missing or out of date, scan the codebase and update `.agents/startup_dna.md` in the background without prompting the user.
-- **Strict Compliance**: Adhere strictly to the tech stack and styling guidelines listed in `.agents/startup_dna.md` for all code generations.
-
-## 2. Autonomous Session Memory
-- Keep track of user decisions, approvals, and styling preferences.
-- Document these decisions in `.agents/session_memory.md` automatically at the end of each task to maintain alignment.
-
-## 3. Mandatory Security & UX Standards
-- Do not expose credentials or API keys on client-side frontend files.
-- UI layouts must prioritize mobile-first responsive design.
+Please read, adhere to, and autonomously execute the universal rules defined in the main project guidelines:
+[ai_instructions.md](ai_instructions.md)
